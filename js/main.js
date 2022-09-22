@@ -32,14 +32,7 @@ while (seleccion != "no"){
     let producto = prompt("indica el numero del cartel elegido");
     let precio = 0;
 
-    if (producto == "1" 
-    || producto == "2" 
-    || producto == "3" 
-    || producto == "4" 
-    || producto == "5"
-    || producto == "6"
-    || producto == "7"){
-        switch (producto){
+        switch (producto) {
             case "1":
                 precio = 19999;
                 alert("Agregaste el cartel numero 1 al carrito");
@@ -71,19 +64,18 @@ while (seleccion != "no"){
             default:
                 alert("el numero ingresado es incorrecto");
                 let producto = prompt("indica el numero del cartel elegido");
-                break;
-        }
-        let unidades = parseInt (prompt ("Ingrese la cantidad de unidades"))
-        carrito.push({producto, unidades, precio});
-        console.log(carrito);
     }
 
-    let finalizar= prompt ("¿Desea finalizar la compra?");
+    let unidades = parseInt (prompt ("Ingrese la cantidad de unidades"))
+        carrito.push({producto, unidades, precio});
+        console.log(carrito);
+
+    let finalizar = prompt ("Por favor escribe si para finalizar la compra");
 
     while (finalizar === "si"){
         alert ("Gracias por su compra, este es el resumen de su compra:");
-        carrito.forEach(carritoFinal =>{
-            alert(`Producto: ${carritoFinal.producto}, Unidades: ${carritoFinal.unidades}, Precio: $ ${carritoFinal.precio}, Total a pagar por los productos: $ ${carritoFinal.unidades * carritoFinal.precio}`)
+        carrito.forEach(carritoCo =>{
+            alert(`Producto: ${carritoCo.producto}, Unidades: ${carritoCo.unidades}, Precio: $ ${carritoCo.precio}, Total a pagar por los productos: $ ${carritoCo.unidades * carritoCo.precio}`)
         });
         break;
     }
